@@ -1,0 +1,29 @@
+.card-container{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+gap:2rem;
+padding:2rem;
+align-items: center;
+justify-content: center;
+
+
+}
+
+@media screen and (max-width:968px) {
+
+  .card-container{
+    grid-template-columns: 1fr 1fr;
+  }
+  
+}
+@media screen and (max-width:768px) {
+
+  .card-container{
+ 
+    grid-template-columns: 1fr;
+  }
+  .card{
+    margin:0 auto;
+  }
+  
+}
