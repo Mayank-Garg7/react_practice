@@ -5,9 +5,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { useNavigate } from 'react-router-dom';
+
 const TodoCard = ({todo}) => {
+  let navigate=useNavigate()
+  const handleClick=(id)=>{
+    navigate(`../singlecard/${id}`);
+    ///localhost:5173/card/singlecard/1
+    }
   return (
-    <Card className='card' sx={{ maxWidth: 345 }}>
+    <Card onClick={()=>handleClick(todo.id)} className='card' sx={{ maxWidth: 345 }}>
     <CardMedia
       component="img"
       alt="green iguana"

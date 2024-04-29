@@ -5,8 +5,9 @@ import { BrowserRouter as BR, Route, Routes } from 'react-router-dom'
 import { dividerClasses } from '@mui/material'
 import CardCollection from './component/CardCollection'
 import CardDetails from './component/CardDetails'
-import Home from './component/Home'
+import PrivateRoute from './component/PrivateRoute'
 import Login from './component/Login'
+import Home from './component/Home'
 
 
 
@@ -40,11 +41,13 @@ fethcData()
   return (
 <BR>
 <Routes>
-<Route path='login' element={<Login/>}/>
-<Route path="/" element={<Home/>}>
+<Route path='/' element={<Home/>}/>
 
-<Route path='card' element={<CardCollection todo={data} loading={loading} errorMessage={errorMessage} error={error} />}/>
-<Route path='card/:id' element={<CardDetails/>}/>
+<Route path='login' element={<Login/>}/>
+<Route path="card" element={<PrivateRoute/>}>
+
+<Route path='carddetail' element={<CardCollection todo={data} loading={loading} errorMessage={errorMessage} error={error} />}/>
+<Route path='singlecard/:id' element={<CardDetails/>}/>
   
 </Route>
 

@@ -1,19 +1,16 @@
 import React from 'react'
-import { Navigate, Outlet } from 'react-router-dom'
-import ResponsiveAppBar from './Navbar'
-import Navbar from './Navbar'
+import { useNavigate } from 'react-router-dom'
 
 const Home = () => {
-    let isLoggedin=false
+    let navigate=useNavigate()
+const hadnleLogin=()=>{
+    navigate('/login')
+}
+
   return (
-    <>
-
-{isLoggedin?<Outlet/>:<Navigate to='/login'/>}
-
-
-  
-    </>
-  
+    <div>Home
+    <button onClick={hadnleLogin}>go to login</button>
+    </div>
   )
 }
 
